@@ -35,4 +35,101 @@ name: projectManager
 auth: OAuth
 endpoints:
  projects:
+  _specify each http method? permissions? expected response?_
+```
+
+## Option 2 (resource-based spec):
+```
+name: projectManager
+auth: OAuth
+defaults:
+ charfield:
+  length: 40
+resources:
+ User:
+  fields:
+   first_name: charfield
+   last_name: charfield
+   username: charfield
+    unique
+   user_level:
+    choices:
+     ProjectManager
+     Contributor
+ Project:
+  fields:
+   name:
+    length: 40
+    good: To-Do List
+   owner:
+    User
+    _how to specify user must be projectmanager flagged?_
+```
+
+## Option 3 (frontend-based spec):
+```
+name: projectManager
+auth: OAuth
+splash:
+ anonymous:
+  actions:
+   login
+ user:
+  components:
+   dashboard
+dashboard:
+ projectManager:
+  actions:
+   calendar
+  components:
+   project-list
+ contributor:
+  actions:
+   calendar
+  components:
+   task-list
+project-list:
+ components:
+  repeated:
+   project-summary
+task-list:
+ components:
+  repeated:
+   task-summary
+project-summary:
+ object: project
+ actions:
+  project-detail
+ fields:
+  project:
+   name
+   owner:
+    name
+ components:
+  repeated:
+   task-summary
+_how to indicate that only tasks assigned to this project should be displayed?_
+```
+
+## Option 4 (actions-based-spec):
+```
+name: projectManager
+auth: OAuth
+initial:
+ test: user.logged_in
+ false:
+  login
+ true:
+  test: user.user_type
+  projectManager:
+   view:
+    project-list
+   go:
+    calendar
+  contributor:
+   view:
+    task-list
+   go:
+    calendar
+_how is this different from option 3?  Is it worth exploring both to get to "actions" like update and find differences?_
 ```
