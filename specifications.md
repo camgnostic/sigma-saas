@@ -133,3 +133,123 @@ initial:
     calendar
 _how is this different from option 3?  Is it worth exploring both to get to "actions" like update and find differences?_
 ```
+
+## Swagger output:
+The swagger output for any of the four options should be identical (same toy project):
+```
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: "projectManager"
+paths:
+  /projects:
+    get:
+      description: Gets `Project` objects.
+      operationId: findProjects
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: projects response
+          schema:
+            title: ArrayOfProjects
+            type: array
+            items:
+              $ref: '#/definitions/project'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+    post:
+      description: Creates a new `Project` object
+      operationId: addProject
+      produces:
+        - application/json
+      parameters:
+        - name: project
+          in: body
+          description: project to add to the project list
+          required: true
+          schema:
+            $ref: '#/definitions/newProject'
+      responses:
+        '201':
+          description: project created successfully
+          schema:
+            $ref: '#/definitions/project'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+  /projects/{id}:
+    get:
+      description: returns a single `Project` by ID, if the user has access to the project
+      operationId: findProjectById
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: id of project to fetch
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: project response
+          schema:
+            $ref: '#/definitions/project'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+    put:
+      description: updates details of a particular `Project`
+      operationId: updateProject
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: id of project to update
+          required: true
+          type: integer
+          format: int64
+        - name: name
+          description: updated project name
+          required: false
+          type: string
+        - name: owner
+          description: updated project owner
+          required: false
+          type: int
+          format: int64
+      responses:
+        '200':
+          description: project response
+          schema:
+            $ref: '#/definitions/project'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+    delete:
+      description: deletes a specified `Project`
+      operationId: deleteProject
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: id of project to fetch
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: successfully deleted
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+```
