@@ -30,5 +30,9 @@ Each user has a to-do list page, calendar page, and the ability to update their 
 Project managers have a global view of their projects, view per project, and the ability to create/assign tasks/subtasks to contributors.
 
 ## Option 1 (URL-based spec):
+```
 name: projectManager
 auth: OAuth
+endpoints:
+ projects:
+```
