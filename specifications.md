@@ -36,8 +36,11 @@ name: projectManager
 auth: OAuth
 endpoints:
  projects:
+  get: all
+  post: create
 ```
 _specify each http method? permissions? expected response?_
+_how does this predict a front-end setup?  Just a bunch of endpoints by default?_
 
 ## Option 2 (resource-based spec):
 ```
@@ -72,20 +75,20 @@ _how to specify user must be projectmanager flagged?_
 name: projectManager
 auth: OAuth
 splash:
- anonymous:
-  actions:
+ user.is_anonymous:
+  components:
    login
- user:
+ user.is_authenticated:
   components:
    dashboard
 dashboard:
- projectManager:
-  actions:
+ user.projectManager:
+  goto:
    calendar
   components:
    project-list
- contributor:
-  actions:
+ user.contributor:
+  goto:
    calendar
   components:
    task-list
