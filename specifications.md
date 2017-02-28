@@ -17,6 +17,7 @@ Options for resource specification:
  4. actions-based spec (user stories -> front-end pages -> REST API)
 
 **What would this look like for a simple app?**
+
 Toy app:
 Project management app.
  - Users log in with google OAuth
