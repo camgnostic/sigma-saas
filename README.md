@@ -23,7 +23,7 @@ After cloning the SAAS-in-a-box repo, the user provides a (?) YAML specification
  - generates a test-harness directory which externally tests the DRF API through localhost http requests
 
 # Progress:
- - [ ] Specification file format
+ - [ ] Specification file format [started here](specifications.md)
  - [ ] Build.py consumes specification file and produces swagger api spec
  - [ ] Build.py consumes specification file and produces django project
  - [ ] Build.py consumes specification file and produces test harness
