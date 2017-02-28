@@ -35,8 +35,8 @@ name: projectManager
 auth: OAuth
 endpoints:
  projects:
-  _specify each http method? permissions? expected response?_
 ```
+_specify each http method? permissions? expected response?_
 
 ## Option 2 (resource-based spec):
 ```
@@ -63,8 +63,8 @@ resources:
     good: To-Do List
    owner:
     User
-    _how to specify user must be projectmanager flagged?_
 ```
+_how to specify user must be projectmanager flagged?_
 
 ## Option 3 (frontend-based spec):
 ```
@@ -108,8 +108,8 @@ project-summary:
  components:
   repeated:
    task-summary
-_how to indicate that only tasks assigned to this project should be displayed?_
 ```
+_how to indicate that only tasks assigned to this project should be displayed?_
 
 ## Option 4 (actions-based-spec):
 ```
@@ -131,8 +131,9 @@ initial:
     task-list
    go:
     calendar
-_how is this different from option 3?  Is it worth exploring both to get to "actions" like update and find differences?_
 ```
+_how is this different from option 3?  Is it worth exploring both to get to "actions" like update and find differences?_
+
 
 ## Swagger output:
 The swagger output for any of the four options should be identical (same toy project):
