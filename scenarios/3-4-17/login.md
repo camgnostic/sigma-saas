@@ -16,6 +16,21 @@ The user selects "sign out" and sees the page change to the splash page with "Si
 
 #### Cameron
 
+1. In re: invitation/requirement to login occurring at every request state, I was describing specifically the splash page.  I don't think this scenario describes other paths/states, merely the state of: splash page (www.example.com) + anonymous user.
+
+2. In re: mapping of request paths and actions.  I think _No_.  I think that's an important element of what makes this not just Swagger API + semantic sugar.  I believe some "pages/actions/views/states" are comprised of _multiple_ requests/paths, and some might be none (?) - the point is it's just describing the actual displayed behavior, with enough detail to extrapolate front-end and back-end specifics.
+
+3. In re: splash screen descriptiveness - I like it.  So then we have two conditionals + location to describe the "action" (we need to nail down the taxonomy here) - "splash page + anonymous user + redirect info" - I like this, because it also means the page after "sign out" would be loaded.  Obvious implementation is get param but that's getting to implementation not interface, right?
+
+4. In re: google users -> users, I think for pages that use Google OpenID connect, yes (the specific scenario here).  In the same way as another app would use InterSIS OpenID Connect and would need InterSIS user-> our user mapping.
+
+5. In re: classes of users, for this scenario I was only getting as far as "show their dashboard" not speccing the dashboard.  I think that decision wouldn't need to be made until speccing the dashboard, right?
+
+6. Counter-question: is it possible to be a user at www.learnthestates.com and a user at ysd.ak.learnthestates.com?
+  - Pro: you can still make an account after you leave school X without getting a new google account.
+  - Con: (like with typingclub) can result in classroom confusion
+  
+
 #### Joseph
 
 1. Does the invitation/requirement to login occur at every request path/state, or just some request paths/states?
