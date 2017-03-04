@@ -17,12 +17,19 @@ Notably not mentioned here is challenge scheduling (shall the system today ask t
 
 #### Cameron
 
-"opens their console" -> can you elaborate?
+- "opens their console" -> can you elaborate?
 
-Would our schema as we're thinking of it be as specific as to describe the specific subsets of challenges or would it merely describe a "challenge" page with a "question" display element and an "answer" input element?
+- Would our schema as we're thinking of it be as specific as to describe the specific subsets of challenges or would it merely describe a "challenge" page with a "question" display element and an "answer" input element?
 
-  To this point: I guess this goes to the nature of what our language is for... I mean, is the purpose to prototype a skeleton where the first view the dev looks at after running "build" is to see (literally) "Question" and a field for "Answer"?
-  Put another way - are the specifics of how to implement the various state challenges part of the program-specific logic (the part we're trying to get to faster) or part of the infrastructure (the part we're trying to abstract away / avoid boilerplating / meta-program)?
+  - To this point: I guess this goes to the nature of what our language is for... I mean, is the purpose to prototype a skeleton where the first view the dev looks at after running "build" is to see (literally) "Question" and a field for "Answer"?
+  - Put another way - are the specifics of how to implement the various state challenges part of the program-specific logic (the part we're trying to get to faster) or part of the infrastructure (the part we're trying to abstract away / avoid boilerplating / meta-program)?
+
+- RESTful API = stateless.  Our SPA should be (roughly) stateless (or else we're sort of overlaying state using JS which is awful).  User stories are stateful.
+  - Agree?
+  - As such: should we view the semantic language as a sort of map of stateless pages that can be traversed in the order specified in the user story (but don't explicitly describe that routing)?
+  - Put another way - do we sort of view the path from user story -> specification as a stripping of directionality (and even edges altogether) from the directed graph of user stories and producing a well-defined set of nodes?
+
+
 
 #### Joseph
 
