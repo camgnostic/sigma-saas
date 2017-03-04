@@ -1,6 +1,10 @@
 # Specification file
 (back to [vision](README.md))
 
+## Specification ideals:
+ - Should be complete before first compile (general enough to not need to be incrementally extended)
+ - Recompiling after a spec update should be a major overhaul (redo migrations, etc.) to fix a discovered major structural problem
+
 ### Format:
  - YAML format (simple, low-overhead, easily read by python)
 
