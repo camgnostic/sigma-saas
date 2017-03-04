@@ -43,6 +43,22 @@ teacher-page
 
 #### Joseph
 
+* Does the student always have an encouragement to study the states, or is it driven by something on the server?
+
+  EG: Maybe sometimes when the student goes to this console page, they are encouraged to study animal names. Sometimes they are encouraged to study their state identification.
+  
+  This could be prompted by something that the teacher does "click a button labeled 'make everyone study the united states'", or something about the state of that particular challenge (last studied a long time ago, etc.)
+  
+* Is there a way for our spec language to specify the relationship between the student's activity and the two displays that the teacher reads?
+
+  EG: Here's a "challenge" activity and it's of the "click the image" type and each such challenge shall include an image, and a "click box" for the correct answer, and the student shall be given as many tries as necessary to finish the challenge, and the challenge shall be considered satisfied when the student clicks in the correct area.
+  
+  EG continued: And the spec shall include an action or page which includes, for that challenge and that student, to what degree the student completed the challenge by (eventually) getting all of the correct answers.
+  
+  EG continued: And perhaps the challenge also specifies that it is completed "well" when it's completed correctly on the first try.
+  
+  
+
 ### Response to Responses
 
 #### Cameron
