@@ -29,6 +29,11 @@ Notably not mentioned here is challenge scheduling (shall the system today ask t
   - As such: should we view the semantic language as a sort of map of stateless pages that can be traversed in the order specified in the user story (but don't explicitly describe that routing)?
   - Put another way - do we sort of view the path from user story -> specification as a stripping of directionality (and even edges altogether) from the directed graph of user stories and producing a well-defined set of nodes?
 
+_Question responses_:
+
+- Student encouragement to study vs. server-driven: outside the scope of the spec.  Merely need to say "if there is a study option available for this student, it is displayed in this view/page/action"
+- Relationship between student activity and teacher views: outside the scope of the spec. Same answer.  "If there is quantitative data on student progress to display, it is displayed here" - again that can be mapped to an endpoint automatically that will later have programmer-magic applied to make those decisions.
+
 ```
 student-page:
   notifications
