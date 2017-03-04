@@ -29,7 +29,17 @@ Notably not mentioned here is challenge scheduling (shall the system today ask t
   - As such: should we view the semantic language as a sort of map of stateless pages that can be traversed in the order specified in the user story (but don't explicitly describe that routing)?
   - Put another way - do we sort of view the path from user story -> specification as a stripping of directionality (and even edges altogether) from the directed graph of user stories and producing a well-defined set of nodes?
 
-
+```
+student-page:
+  notifications
+  link to state to name challenge (perhaps included in notification)
+  link to name to state challenge (perhaps included in notification)
+teacher-page
+  link to review specific student recent activity (quantity)
+  link to review specific student recent activity (quality)
+  summary of student recent activity (quantity)
+  summary of student recent activity (quality)
+```
 
 #### Joseph
 
